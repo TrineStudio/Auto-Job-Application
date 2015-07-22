@@ -9,3 +9,10 @@ function startApplication() {
 $(document).on('click', '#start', function(){
 	startApplication();
 });
+
+chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
+	if (message.action == 'open') {
+		var link = message.link;
+		chrome.tabs.create({ url: link});
+	}
+});
