@@ -12,7 +12,9 @@ $(document).on('click', '#start', function(){
 
 chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
 	if (message.action == 'open') {
-		var link = message.link;
-		chrome.tabs.create({ url: link});
+		var links = message.links;
+		for (i in links) {
+			chrome.tabs.create({ url: links[i]});
+		}
 	}
 });
