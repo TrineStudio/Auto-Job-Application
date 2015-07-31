@@ -12,14 +12,15 @@
       body {
         font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
         font-size: 100%;
+				width: 200px;
       }
-      #status {
-        /* avoid an excessively wide status text */
-        white-space: pre;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        max-width: 400px;
-      }
+			#function-list div:hover {
+				background: gray;
+				cursor: pointer;
+			}
+			#function-list {
+				list-style-type: none;
+			}
     </style>
 
     <!--
@@ -31,7 +32,13 @@
     <script src="popup.js"></script>
   </head>
   <body>
-    <div id="start">Start!</div>
+		<ul id='function-list'>
+			<li>
+				<div id="start">Start!</div>
+			</li>
+			<li>
+				<div id='amazon'>Apply for amazon!</div>
+			</li>
   </body>
 </html>
 
